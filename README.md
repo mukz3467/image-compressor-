@@ -1,6 +1,6 @@
-# 4K Quality
+# Image Compressor
 
-A customized English, light-theme version of [webp-crusher](https://github.com/shufflethis/webp-crusher), an open-source, browser-based bulk WebP image compressor.
+A free, browser-based bulk image compressor that converts supported images to WebP, lets users set a target output size and maximum width, and packages results into a ZIP download. Adapted from [webp-crusher](https://github.com/shufflethis/webp-crusher).
 
 ## Features
 
@@ -13,7 +13,7 @@ A customized English, light-theme version of [webp-crusher](https://github.com/s
 
 ## Deploy on Vercel
 
-1. Import `mukz3467/4k-quality` from GitHub in Vercel.
+1. Import the GitHub repository for this project in Vercel. The repository is currently named `mukz3467/4k-quality`.
 2. Framework preset: **Other**.
 3. Build command: leave empty.
 4. Output directory: `.` (project root).
