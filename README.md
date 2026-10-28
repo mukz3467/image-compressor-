@@ -1,15 +1,15 @@
 # 4K Quality
 
-A lightweight, responsive image toolkit for resizing images to 4K dimensions, compressing image files, and converting supported images to WebP, JPG, or PNG.
+A customized English, light-theme version of [webp-crusher](https://github.com/shufflethis/webp-crusher), an open-source, browser-based bulk WebP image compressor.
 
 ## Features
 
-- Resize images to 4K UHD, portrait 4K, Full HD, square, or custom dimensions.
-- Keep the original aspect ratio while resizing.
-- Export to WebP, JPG, and PNG with adjustable quality where supported.
-- Preview output and download it locally.
-- Process images in the browser; selected images are not uploaded to a server.
-- Responsive layout for desktop and mobile.
+- Add up to 50 images at a time.
+- Compress images to WebP in the browser.
+- Set a target output size in KB and a maximum image width.
+- View original and compressed file sizes and estimated savings.
+- Download processed images together as a ZIP file.
+- Images are processed locally in the browser and are not uploaded to a server.
 
 ## Deploy on Vercel
 
@@ -19,12 +19,14 @@ A lightweight, responsive image toolkit for resizing images to 4K dimensions, co
 4. Output directory: `.` (project root).
 5. Deploy.
 
-No build step, server, environment variables, or paid API key is required.
+No build step, backend, environment variables, or paid API key is required.
 
-## Important limitation
+## Attribution and license
 
-The 4K preset resizes an image to 4K pixel dimensions. It does not perform AI super-resolution and cannot recreate details absent from the source image.
+This project is adapted from [shufflethis/webp-crusher](https://github.com/shufflethis/webp-crusher). The upstream project is distributed under the MIT License; see [LICENSE](./LICENSE). The upstream attribution is also shown in the website footer.
 
-## Privacy
+## Notes
 
-Image processing uses browser APIs (Canvas and object URLs). The app does not send image contents to a backend.
+- Compression is performed with the browser Canvas API; output depends on browser support and source image.
+- The app loads JSZip from a CDN to create the ZIP download.
+- Large batches may be memory-intensive on low-RAM phones.
