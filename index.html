@@ -298,6 +298,71 @@
     .file-item { grid-template-columns: 1fr auto; gap: 8px; }
     .file-thumb, .file-saved { display: none; }
   }
+
+  /* Utilivanta-style monochrome refresh */
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface2: #f5f5f5;
+    --border: #e5e5e5;
+    --accent: #111111;
+    --accent2: #111111;
+    --text: #111111;
+    --text-dim: #666666;
+    --danger: #b42318;
+  }
+  body { background: #ffffff; color: #111111; }
+  header h1 {
+    background: none;
+    color: #111111;
+    -webkit-text-fill-color: #111111;
+  }
+  header .badge {
+    background: #ffffff;
+    border-color: #e5e5e5;
+    color: #111111;
+  }
+  .dropzone { background: #ffffff; border-color: #d4d4d4; }
+  .dropzone:hover, .dropzone.dragover {
+    border-color: #111111;
+    background: #fafafa;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.04);
+  }
+  .btn-primary, .btn-download {
+    background: #111111;
+    color: #ffffff;
+    border: 1px solid #111111;
+  }
+  .btn-primary:hover:not(:disabled), .btn-download:hover:not(:disabled) {
+    background: #333333;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  }
+  .btn-danger {
+    background: #ffffff;
+    border: 1px solid #dedede;
+    color: #333333;
+  }
+  .btn-danger:hover:not(:disabled) {
+    background: #f5f5f5;
+    border-color: #999999;
+  }
+  .stat-card, .settings, .file-item {
+    background: #ffffff;
+    border-color: #e5e5e5;
+  }
+  .stat-card .value.green, .stat-card .value.blue, .file-saved { color: #111111; }
+  .progress-bar-inner { background: #111111; }
+  .file-item.done { border-color: #d4d4d4; }
+  .spinner { border-top-color: #111111; }
+  .setting-group input[type="number"], .setting-group select {
+    background: #ffffff;
+    border-color: #d9d9d9;
+    color: #111111;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+
 </style>
 </head>
 <body>
