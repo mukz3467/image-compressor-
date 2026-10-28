@@ -338,7 +338,7 @@
     </div>
     <div class="stat-card">
       <div class="label">Original size</div>
-      <div class="value blue" id="statOriginal size">0 MB</div>
+      <div class="value blue" id="statOriginalSize">0 MB</div>
     </div>
     <div class="stat-card">
       <div class="label">Compressed</div>
@@ -370,7 +370,7 @@
 const MAX_FILES = 50;
 let files = [];
 let convertedBlobs = [];
-let totalOriginal sizeSize = 0;
+let totalOriginalSize = 0;
 let totalCompressedSize = 0;
 
 const dropzone = document.getElementById('dropzone');
@@ -397,11 +397,11 @@ function handleFiles(newFiles) {
   const space = MAX_FILES - files.length;
   const toAdd = arr.slice(0, space);
   if (arr.length > space) {
-    alert('Only ' + MAX_FILES + ' Images erlaubt. ' + (arr.length - space) + ' were skipped.');
+    alert('Only ' + MAX_FILES + ' images allowed. ' + (arr.length - space) + ' were skipped.');
   }
   files.push(...toAdd);
   convertedBlobs = new Array(files.length).fill(null);
-  totalOriginal sizeSize = files.reduce((s, f) => s + f.size, 0);
+  totalOriginalSize = files.reduce((s, f) => s + f.size, 0);
   totalCompressedSize = 0;
   document.getElementById('btnConvert').disabled = false;
   document.getElementById('btnDownload').disabled = true;
@@ -414,7 +414,7 @@ function updateUI() {
   document.getElementById('stats').style.display = files.length ? 'flex' : 'none';
   document.getElementById('controls').style.display = files.length ? 'flex' : 'none';
   document.getElementById('statCount').textContent = files.length;
-  document.getElementById('statOriginal size').textContent = formatSize(totalOriginal sizeSize);
+  document.getElementById('statOriginalSize').textContent = formatSize(totalOriginalSize);
 
   const list = document.getElementById('fileList');
   list.innerHTML = '';
@@ -487,7 +487,7 @@ async function startConversion() {
   }
 
   document.getElementById('statCompressed').textContent = formatSize(totalCompressedSize);
-  var savedPct = totalOriginal sizeSize > 0 ? ((1 - totalCompressedSize / totalOriginal sizeSize) * 100).toFixed(1) : 0;
+  var savedPct = totalOriginalSize > 0 ? ((1 - totalCompressedSize / totalOriginalSize) * 100).toFixed(1) : 0;
   document.getElementById('statSaved').textContent = savedPct + '%';
   btnDownload.disabled = false;
 }
@@ -585,7 +585,7 @@ async function downloadZip() {
 function resetAll() {
   files = [];
   convertedBlobs = [];
-  totalOriginal sizeSize = 0;
+  totalOriginalSize = 0;
   totalCompressedSize = 0;
   document.getElementById('fileList').innerHTML = '';
   document.getElementById('stats').style.display = 'none';
